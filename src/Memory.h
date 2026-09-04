@@ -4,8 +4,6 @@
 #include <array>
 #include <cstdint>
 
-// An 8-bit address can select one of 256 memory locations. In our design, each memory location stores 8 bits (one byte)
-
 class Memory
 {
 public:
@@ -25,7 +23,7 @@ private:
     static constexpr std::size_t MEMORY_SIZE = 1 << ADDRESS_WIDTH;
     */
 
-    // An array of uint8_t (8-bit size cells).
+    // An array of uint8_t (8-bit size cells aka 1 byte).
     // 2^8 = 256, the amount of addressable locations.
     std::array<uint8_t, 256> storage_{};
 };

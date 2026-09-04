@@ -4,6 +4,10 @@
 - 8-bit registers (8-bit architecture)
 - 12 instructions (16 possible instructions)
 
+# Memory
+Size of 256 bytes meaning:
+- 8-bit address size
+
 ## Instruction size
 Instructions are currently of size 8-bit.
 The sturcture is as below:

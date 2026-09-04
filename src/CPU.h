@@ -11,6 +11,7 @@ class CPU
 public:
     CPU(Memory& memory);
 
+    // Executes step() constantly until halted
     void run();
 
     // Execute one complete CPU cycle:
