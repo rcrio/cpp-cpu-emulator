@@ -5,6 +5,7 @@
 #include <cstdint>
 
 #include "Memory.h"
+#include "OpCode.h"
 
 class CPU
 {
@@ -25,26 +26,6 @@ public:
     bool isHalted() const;
 
 private:
-    // OpCode as enum, to make things clearer
-    enum class OpCode : std::uint8_t
-    {
-        NOP   = 0x0,
-        MOV   = 0x1,
-        LOAD  = 0x2,
-        STORE = 0x3,
-
-        ADD   = 0x4,
-        SUB   = 0x5,
-        AND   = 0x6,
-        OR    = 0x7,
-        XOR   = 0x8,
-
-        JMP   = 0x9,
-        JZ    = 0xA,
-
-        HALT  = 0xF
-    };
-
     // Produced by decode to be used by execute
     struct DecodedInstruction
     {

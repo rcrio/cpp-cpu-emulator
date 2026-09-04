@@ -1,5 +1,4 @@
 # CPU emulator
-
 - 8-bit instructions (plan to increase to 16-bit for loading values into registers, this would mean increasing to 16-bit IR)
 - 8-bit registers (8-bit architecture)
 - 12 instructions (16 possible instructions)
@@ -7,6 +6,8 @@
 # Memory
 Size of 256 bytes meaning:
 - 8-bit address size
+
+# Instructions
 
 ## Instruction size
 Instructions are currently of size 8-bit.
@@ -31,12 +32,10 @@ The sturcture is as below:
   - Opcode: `0x2`
   - Load `R2` into `R1`.
 
-`STORE R1, R2`
+`STORE R1, R2` (Not implemented yet)
 
   - Opcode: `0x3`
   - Store the value in `R1` into the memory address held in `R2`.
-
-  (Not implemented yet)
 
 `ADD R1, R2`
 
@@ -82,7 +81,7 @@ The sturcture is as below:
   - Opcode: `0xF`
   - Stop CPU execution.
 
-## Registers
+# Registers
 Register sizes are currently of size 8-bit.
 ```
 CPU

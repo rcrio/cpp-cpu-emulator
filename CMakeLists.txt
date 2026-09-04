@@ -9,6 +9,7 @@ add_executable(cpu-emulator
     src/main.cpp
     src/CPU.cpp
     src/Memory.cpp
+    src/ProgramEncoder.cpp
 )
 
 target_include_directories(cpu-emulator PRIVATE include)

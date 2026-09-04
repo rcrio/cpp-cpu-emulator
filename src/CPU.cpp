@@ -70,7 +70,7 @@ CPU::DecodedInstruction CPU::decode()
     uint8_t reg2 = ir_ & reg2Mask;
     
     // Cast rawOpCode to an enum to make it easier to address in the execute method
-    CPU::OpCode opCode = static_cast<OpCode>(rawOpCode);
+    OpCode opCode = static_cast<OpCode>(rawOpCode);
 
     return
     {
@@ -87,14 +87,14 @@ void CPU::execute(const DecodedInstruction& instruction)
 
     switch(instruction.opCode)
     {
-        case CPU::OpCode::NOP:
+        case OpCode::NOP:
             break;
         
-        case CPU::OpCode::MOV:
+        case OpCode::MOV:
             registerA = registerB;
             break;
 
-        case CPU::OpCode::LOAD:
+        case OpCode::LOAD:
             registerA = memory_.read(registerB);
             break;
             
@@ -104,23 +104,23 @@ void CPU::execute(const DecodedInstruction& instruction)
             break;
         */
 
-        case CPU::OpCode::ADD:
+        case OpCode::ADD:
             registerA = registerA + registerB;
             break;
 
-        case CPU::OpCode::SUB:
+        case OpCode::SUB:
             registerA = registerA - registerB;
             break;
         
-        case CPU::OpCode::AND:
+        case OpCode::AND:
             registerA = registerA & registerB;
             break;
         
-        case CPU::OpCode::OR:
+        case OpCode::OR:
             registerA = registerA | registerB;
             break;
         
-        case CPU::OpCode::XOR:
+        case OpCode::XOR:
             registerA = registerA ^ registerB;
             break;
 
@@ -139,7 +139,7 @@ void CPU::execute(const DecodedInstruction& instruction)
             break;
         */
 
-        case CPU::OpCode::HALT:
+        case OpCode::HALT:
             halted_ = true;
             break;
 
