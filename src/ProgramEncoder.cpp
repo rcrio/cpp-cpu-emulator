@@ -30,6 +30,12 @@ bool ProgramEncoder::encodeFile(
 
     while (std::getline(inputFile, line))
     {
+        // If a comment exists in the program.txt, we skip it
+        if (line.rfind("//", 0) == 0)
+        {
+            continue;
+        }
+
         uint16_t encodedInstruction = encodeLine(line);
 
         outputFile << std::bitset<8>(encodedInstruction) << '\n';

@@ -3,11 +3,15 @@
 
 #include <array>
 #include <cstdint>
+#include <string>
 
 class Memory
 {
 public:
     Memory();
+
+    // Load a program into memory by path.
+    bool load(const std::string& inputPath);
 
     // Read the address from memory and return the value stored there.
     uint8_t read(uint8_t address) const;
